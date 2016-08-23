@@ -22,3 +22,7 @@ class ComplexNumber:
 		result._real = self._real - other._real
 		result._imag = self._imag - other._imag
 		return result
+
+	def __str__(self):
+		"""Produce string representation of the complex number"""
+		return (str(self._real) + str(self._imag) + 'i')
