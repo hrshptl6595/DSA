@@ -7,22 +7,24 @@ class stack:
 		"""Initializes the stack"""
 		self._stack = [0]*length
 
-	def __isEmpty__(self):
+	def isEmpty(self):
 		"""Checks if the stack is empty or not"""
 		if len(self._stack) == 0:
 			return True
 		else:
 			return False
 
-	def __push__(self, other):
+	def push(self, val):
 		"""Adds an element to the end of the stack"""
-		self._stack += [other]
+		(self._stack).append(val)
+		return self._stack[:]
 
-	def __pop__(self):
+	def pop(self):
 		"""Removes the last element and prints the remaining stack"""
-		return self._stack[:-2]
+		self._stack = self._stack[:-1]
+		return self._stack[:]
 
-	def __top__(self):
+	def top(self):
 		"""Returns the last element"""
 		return self._stack[-1]
 
@@ -31,4 +33,4 @@ class stack:
 		if len(self._stack) == 0:
 			return "Stack is empty"
 		else:
-			return str(self._stack[:-1])
+			return str(self._stack[:])
