@@ -26,3 +26,9 @@ class ComplexNumber:
 	def __str__(self):
 		"""Produce string representation of the complex number"""
 		return (str(self._real) + str(self._imag) + 'i')
+
+	def __mul__(self, other):
+		"""Multiply two complex numbers and return answer"""
+		result._real = self._real*other._real - self._imag*other._imag
+		result._imag = self._real*other._imag + self._imag*other._real
+		return result
