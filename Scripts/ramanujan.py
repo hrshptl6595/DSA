@@ -1,5 +1,5 @@
 def ramanujan(n):
-	for i in range(int(pow(n,1/3))):
+	for i in range(int(pow(n,1/2))):
 		for j in range(i):
 			for k in range(j):
 				for l in range(k):

@@ -1,6 +1,6 @@
 class Stack(object):
 	"""A simple stack ADT with top as the end of a list"""
-	def __init__():
+	def __init__(self):
 		self.items = []
 
 	def __str__(self):
@@ -33,7 +33,7 @@ def match_paren(parens):
 	"""returns true or false if parenthesis expression passed is matching"""
 	stack = Stack()
 	for b in parens:
-		if b = "(":
+		if b == "(":
 			stack.push(1)
 		else:
 			if not stack.isEmpty():
@@ -70,4 +70,4 @@ def infix_to_postfix(infixexpr):
 if __name__ == "__main__":
 	expr = ["A * B + C * D", "( A + B ) * C - ( D - E ) * ( F + G )"]
 	for e in expr:
-		print infix_to_postfix(e)
+		print(infix_to_postfix(e))
