@@ -1,36 +1,45 @@
-class stack:
-	"""
-	Represents a Stack
-	"""
+class stack(object):
+    def __init__(self, value=None, next=None):
+        self.value = value
+        self.next = next
 
-	def __init__(self, length = 0):
-		"""Initializes the stack"""
-		self._stack = [0]*length
+    def push(self, value):
+        oldstack = stack(self.value, self.next)
+        self.value = value
+        self.next = oldstack
 
-	def isEmpty(self):
-		"""Checks if the stack is empty or not"""
-		if len(self._stack) == 0:
-			return True
-		else:
-			return False
+    def pop(self):
+        outputval = self.value
+        self.value, self.next = self.next.value, self.next.next
+        return outputval
 
-	def push(self, val):
-		"""Adds an element to the end of the stack"""
-		(self._stack).append(val)
-		return self._stack[:]
+    def peek(self):
+        return self.value
 
-	def pop(self):
-		"""Removes the last element and prints the remaining stack"""
-		self._stack = self._stack[:-1]
-		return self._stack[:]
+    def size(self):
+        numelements = 0
+        nextval = self.next
+        while (nextval != None):
+            nextval = nextval.next
+            numelements += 1
+        return numelements
 
-	def top(self):
-		"""Returns the last element"""
-		return self._stack[-1]
+    def isEmpty(self):
+        if (self.value == None):
+            return True
+        else:
+            return False
 
-	def __str__(self):
-		"""String representation of the stack"""
-		if len(self._stack) == 0:
-			return "Stack is empty"
-		else:
-			return str(self._stack[:])
+if __name__ == "__main__":
+    mystack = stack()
+    mystack.push(10)
+    print "Size = ", mystack.size()
+    mystack.push(9)
+    print "Size = ", mystack.size()
+    mystack.push(15)
+    print "Size = ", mystack.size()
+    print mystack.pop()
+    print mystack.pop()
+    print mystack.peek()
+    print mystack.pop()
+    print mystack.isEmpty()
