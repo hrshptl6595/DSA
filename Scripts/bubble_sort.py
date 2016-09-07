@@ -19,6 +19,6 @@ def bubble_sort_adaptive(alist):
 if __name__ == "__main__":
 	#print(bubbleSort(list(range(5000))+[10**8]+list(range(5001,10000))))
 	t1 = time.perf_counter()
-	print(bubble_sort_adaptive(list(range(5000))+[10**8]+list(range(5001,10000))))
+	print(bubbleSort(list(range(5000))+[10**8]+list(range(5001,10000))))
 	t2 = time.perf_counter()
 	print("Time taken: ", t2-t1)
