@@ -12,10 +12,8 @@ def merge(al, bl):
 	for i in range(na):
 		for j in range(nb):
 			if al[i]<bl[j]:
-				print(al[i])
-				cl.append(al[i])
+				cl = cl + [al[i]]
 			else:
-				print(bl[j])
-				cl.append(bl[j])
+				cl = cl + [bl[j]]
 	return cl
 mergeSort([8,7,6,5,4,3,2,1])
