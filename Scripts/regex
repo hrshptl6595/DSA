@@ -1,0 +1,10 @@
+. -> match any character(only one character)
+* -> 0 or more from prev character
+^ -> start
+$ -> end
+[aeiou] -> all characters must be there
+[^aeiou] -> none of these elements should be there
+\$ -> match $
+\\ -> match \
+[0-9]*\.[0-9][0-9]
+[0-9]{10} -> match mobile number
