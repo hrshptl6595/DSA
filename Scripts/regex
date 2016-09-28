@@ -1,5 +1,6 @@
 . -> match any character(only one character)
 * -> 0 or more from prev character
++ -> One or more from prev character
 ^ -> start
 $ -> end
 [aeiou] -> all characters must be there
@@ -7,4 +8,15 @@ $ -> end
 \$ -> match $
 \\ -> match \
 [0-9]*\.[0-9][0-9]
+{a,} >= a
+{,b} <= b
+{a,b} a <= #matches <= b
 [0-9]{10} -> match mobile number
+[A-Z a-z _][A-Z a-z _ 0-9]* -> Regex for variable name
+() -> For grouping
+| -> Used as OR operator
+\< \> -> Define word boundaries
+Literals -> (){}|+<>
+Non-Literals -> .$[]\^*
+
+*** Read and learn about regex module in python ***
